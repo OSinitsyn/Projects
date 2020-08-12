@@ -1,5 +1,4 @@
 from datetime import datetime
-from config import StockDataConfig as sdConfig
 
 class Logger:
     def __init__(self):
@@ -16,10 +15,17 @@ class StockAnalyticsRunnerLogger(Logger):
     def __init__(self):
         self.loggerType = 'Stock analytics runner'
 
+class DataVisualizerLogger(Logger):
+    def __init__(self):
+        self.loggerType = 'Data visualizer'
+
+
 def getLogger(loggerType):
     if loggerType == 'stock_data_loader':
         return StockDataLoaderLogger()
     elif loggerType == 'stock_analytics_runner':
         return StockAnalyticsRunnerLogger()
+    elif loggerType == 'data_visualizer':
+        return DataVisualizerLogger()
     else:
         return Logger()
