@@ -9,6 +9,6 @@ class TimeSeriesPlot:
     def __init__(self):
         pass
 
-    def plotTickerData(self, tickerDf):
+    def plotData(self, tickerDf):
         mpf.plot(tickerDf, type = 'candle', style = 'yahoo')
         plt.show()
