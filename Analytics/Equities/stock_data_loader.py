@@ -3,9 +3,7 @@
 
 import yfinance as yf
 import pandas as pd
-import logger
-
-lgr = logger.getLogger(__name__)
+import logging
 
 class HistDataFetcher:
     def __init__(self, tickers = [], **kwargs):
@@ -26,7 +24,6 @@ class HistDataFetcher:
         self.tickersDf = None
 
     def fetchData(self):
-        lgr.logInfo('Fetching historical data for tickers: {}'.format(self.tickers))
         self.tickersDf = yf.download(tickers = self.tickers,
                                      period = self.period,
                                      interval = self.interval,
