@@ -24,6 +24,9 @@ class HistDataFetcher:
         self.tickersDf = None
 
     def fetchData(self):
+        if self.tickers == []:
+            raise ValueError('Ticker list is empty.')
+
         self.tickersDf = yf.download(tickers = self.tickers,
                                      period = self.period,
                                      interval = self.interval,
