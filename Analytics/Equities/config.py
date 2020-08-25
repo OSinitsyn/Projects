@@ -7,7 +7,7 @@ class HistDataConfig:
         return {'period' : '1d',
                 'interval' : '1m',
                 'group_by' : 'ticker',
-                'auto_adjust' : True,
+                'auto_adjust' : False,
                 'prepost' : False,
                 'threads' : True ,
                 'export_data_path' : '/Users/Oleks/Documents/Python/Projects/Analytics/Equities/TempData/',
@@ -15,6 +15,14 @@ class HistDataConfig:
                 'na_rep' : '',
                 'header' : True }
 
+
+class HistReturnsConfig:
+    ### Historical returns ###
+    # 
+    @staticmethod
+    def getParams():
+        return {'logReturns' : True,
+                'calcColName' : 'Adj Close'}
 
 class LoggerConfig:
     ### Logger config ####
